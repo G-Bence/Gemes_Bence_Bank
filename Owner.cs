@@ -9,6 +9,7 @@ namespace Bank
     internal sealed class Owner
     {
        public string Owners_Name { get; set; }
+       //Nem konstruktor
        
        // public string OwnersName { get => Owners_Name; set => Owners_Name = value; }
     }
