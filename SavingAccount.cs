@@ -10,7 +10,8 @@ namespace Bank
     {
         static double baseInterest;
 
-        public static double Interest { get; set; }
+        //public static double Interest { get; set; }
+        public static double Interest { get => baseInterest; set => baseInterest = value; }
 
         public SavingAccount(Owner owner) : base (owner)
         {
@@ -32,5 +33,9 @@ namespace Bank
             Balance += Balance * (Interest / 100);
         }
 
+        public override string? ToString()
+        {
+            return $"{Owner.Owners_Name}'s Saving Accounts\nBalance: {Balance}$";
+        }
     }
 }

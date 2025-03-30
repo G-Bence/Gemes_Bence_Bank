@@ -11,7 +11,8 @@ namespace Bank
         double creditlimit;
         //public double Balance { get; }
 
-        public double Creditlimit { get; }
+        //public double Creditlimit { get; }
+        public double Creditlimit { get => creditlimit;}
 
         public CreditAccount(Owner owner, double creditlimit): base(owner)
         {
@@ -25,6 +26,12 @@ namespace Bank
                 return true;
             }
             return false;
+        }
+
+
+        public override string? ToString()
+        {
+            return $"{Owner.Owners_Name}'s Credit Accounts\nBalance: {Balance}$";
         }
     }
 }

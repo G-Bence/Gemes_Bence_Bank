@@ -8,7 +8,10 @@ namespace Bank
 {
     internal abstract class BankAccount : BankingService
     {
-        public  double Balance { get; protected set;  }
+        private double balance;
+
+        public double Balance { get => balance; set => balance = value; }
+
         protected BankAccount(Owner owner) : base(owner)
         {
 
@@ -16,7 +19,7 @@ namespace Bank
 
         public void Deposit (double amount)
         {
-            Balance += amount;
+            balance += amount;
 
         }
 
@@ -24,7 +27,7 @@ namespace Bank
 
         public BankCard NewCard (string cardNumber)
         {
-            return new BankCard(Owner, Balance, cardNumber);
+            return new BankCard(Owner, balance, cardNumber);
         }
     }
 }

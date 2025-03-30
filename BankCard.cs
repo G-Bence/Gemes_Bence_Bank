@@ -11,8 +11,10 @@ namespace Bank
         double accountBalance;
         string cardNumber;
 
-        public string CardNumber { get;  }
-        public double AccountBalance { get; }
+       /* public string CardNumber { get;  }
+        public double AccountBalance { get; }*/
+        public double AccountBalance { get => accountBalance;}
+        public string CardNumber { get => cardNumber;}
 
         public BankCard(Owner owner, double accountBalance, string cardNumber)
         {
@@ -27,6 +29,7 @@ namespace Bank
                 accountBalance -= amount;
                 return true;
             }
-            return false
+            return false;
+        }   
     }
 }
